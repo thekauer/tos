@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
+import { BrowserRouter as Router,Switch, Route  } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Router>
+      <Switch>
+        <Route path="/"><Home/> </Route>
+        <Route path="/lobby"><h1>Lobby</h1></Route>
+        <Route path="/game"><h1>Game</h1></Route>
+    </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

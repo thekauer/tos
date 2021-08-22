@@ -1,7 +1,9 @@
+import { HomeContainer, PlayButton } from "../components/HomeAtoms";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <HomeContainer>
+        <PlayButton>Play</PlayButton>
+    </HomeContainer>
   );
 }
