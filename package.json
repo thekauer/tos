@@ -1,0 +1,18 @@
+{
+    "private": "true",
+    "workspaces": [
+        "frontend",
+        "backend"
+    ],
+    "scripts": {
+        "client:dev": "yarn workspace frontend start",
+        "client:build": "yarn workspace frontend build",
+        "server:dev": "yarn workspace backend start",
+        "server:build": "yarn workspace backend build",
+        "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+        "build": "concurrently \"npm run server:build\" \"npm run client:build\""
+    },
+    "dependencies": {
+        "concurrently": "^6.2.1"
+    }
+}
