@@ -3,9 +3,20 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import { BrowserRouter as Router,Switch, Route  } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
   <React.StrictMode>
+    <ApolloProvider client={client}>
     <Router>
       <Switch>
         <Route path="/"><Home/> </Route>
@@ -13,6 +24,7 @@ ReactDOM.render(
         <Route path="/game"><h1>Game</h1></Route>
     </Switch>
     </Router>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
